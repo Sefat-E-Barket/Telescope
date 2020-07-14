@@ -1,0 +1,15 @@
+My First R Markdown File
+=========================
+
+'''{r fitmodel}
+library(datasets)
+data(airquality)
+fit<-lm(Ozone~Wind+Temp+Solar.R,data="airquality")
+summary(fit)
+'''
+
+'''{r showtable,result="asis"}
+library(xtable)
+xt<-xtable(summary(fit))
+print(xt,type="html")
+'''
